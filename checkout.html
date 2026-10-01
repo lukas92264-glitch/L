@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>ชำระเงิน — มึงลองฟัง.❤️‍🔥</title>
+  <title>ชำระเงิน — Lukas.❤️‍🔥</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -392,8 +392,8 @@
   <nav class="gs-nav">
     <div class="gs-nav-inner">
       <a class="gs-nav-logo" href="index.html">
-        <img src="./ภาพ/โลโก้หมากรุก พื้นหลังสีดำ.jpg" alt="Logo" class="logo-img">
-        <span class="logo-name">มึงลองฟัง.❤️‍🔥</span>
+        <img src="./ภาพ/โลโก้ช่อง.jpeg" alt="Logo" class="logo-img">
+        <span class="logo-name">Lukas.❤️‍🔥</span>
       </a>
       <a href="planner.html" class="btn-back">← ย้อนกลับ</a>
     </div>
@@ -428,9 +428,9 @@
     <div class="payment-card">
       <span class="bank-badge badge-kbank">ธนาคารกสิกรไทย</span>
       <div class="account-details">
-        <span class="acc-num">177-3-37613-8</span>
-        <span class="acc-name">ชื่อบัญชี: นายผัด ตีวัน</span>
-        <button class="btn-copy" onclick="copyText('1773376138', 'คัดลอกเลขบัญชีกสิกรไทยแล้วครับ 🎉')">
+        <span class="acc-num">182-1-83800-9</span>
+        <span class="acc-name">ชื่อบัญชี: นาย ลู วันทอง</span>
+        <button class="btn-copy" onclick="copyText('1821838009', 'คัดลอกเลขบัญชีกสิกรไทยแล้วครับ 🎉')">
           📋 คัดลอกเลขบัญชี
         </button>
       </div>
@@ -439,13 +439,13 @@
     <div class="payment-card">
       <span class="bank-badge badge-promptpay">พร้อมเพย์ / QR Code</span>
       <div class="account-details">
-        <span class="acc-num">061-927-3586</span>
-        <span class="acc-name">ชื่อบัญชี: นายผัด ตีวัน</span>
-        <button class="btn-copy" onclick="copyText('0619273586', 'คัดลอกเบอร์พร้อมเพย์แล้วครับ 🎉')">
+        <span class="acc-num">092-264-8582</span>
+        <span class="acc-name">ชื่อบัญชี: นาย ลู วันทอง</span>
+        <button class="btn-copy" onclick="copyText('0922648582', 'คัดลอกเบอร์พร้อมเพย์แล้วครับ 🎉')">
           📋 คัดลอกเลขพร้อมเพย์
         </button>
         <div class="qr-container">
-          <img src="./ภาพ/QR.png" class="qr-img" alt="QR Code">
+          <img src="./ภาพ/QR.jpg" class="qr-img" alt="QR Code">
           <button class="btn-copy" onclick="downloadQR()" style="margin-top:12px;">
             💾 ดาวน์โหลด QR Code
           </button>
@@ -518,12 +518,12 @@
 
   async function downloadQR() {
     try {
-      const response = await fetch("./ภาพ/QR.png");
+      const response = await fetch("./ภาพ/QR.jpg");
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "QR-PromptPay-มึงลองฟัง.png";
+      link.download = "QR-PromptPay-Lukas.jpg";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -609,12 +609,12 @@
                 แต่ถ้านานกว่านี้ยังไม่ได้รับ หรือสินค้ามีปัญหา สามารถทักแชทมาบอกผมทางลิงก์ด้านล่างนี้ได้เลยครับ 🙏
               </p>
               <p style="font-weight:700; margin-bottom:8px;">ลิงก์เพจ IG 👇</p>
-              <a href="https://www.instagram.com/youtrylisten" class="social-link ig-link">
-                📸 Instagram : มึงลองฟัง.❤️‍🔥
+              <a href="https://www.instagram.com/lukas_1280?stkn=M3l3MnBpY3k3Ym5s&utm_source=qr" class="social-link ig-link">
+                📸 Instagram : Lukas.❤️‍🔥
               </a>
               <p style="font-weight:700; margin-top:20px; margin-bottom:8px;">ลิงก์เพจ Facebook 👇</p>
-              <a href="https://www.facebook.com/61556607281835" class="social-link fb-link">
-                📘 Facebook : มึงลองฟัง.❤️‍🔥
+              <a href="https://www.facebook.com/share/1KozmqVmcF/?mibextid=wwXIfr" class="social-link fb-link">
+                📘 Facebook : Lukas.❤️‍🔥
               </a>
             </div>`;
         } catch(err) {

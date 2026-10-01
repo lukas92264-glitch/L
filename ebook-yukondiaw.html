@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lukas.❤️‍🔥 — อยู่คนเดียวให้เป็น (อ่านฟรี)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    * { line-height: 1.5 !important; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Prompt", Arial, sans-serif;
+      font-size: 16px;
+      color: #202124;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      font-feature-settings: "kern" 1;
+      -webkit-text-stroke: 0.2px;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── NAV ── */
+    .gs-nav {
+      height: 64px; background: #fff; border-bottom: 1px solid #e0e0e0;
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .gs-nav-inner {
+      max-width: 900px; margin: 0 auto; padding: 0 24px;
+      height: 100%; display: flex; align-items: center; gap: 12px;
+    }
+    .gs-nav-logo {
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+      text-decoration: none; color: #202124;
+    }
+    .gs-nav-logo .logo-img { height: 32px; width: 32px; object-fit: contain; }
+    .logo-name { font-size: 0.72rem; font-weight: 600; color: #202124; white-space: nowrap; }
+    .gs-nav-links { margin-left: 8px; display: flex; align-items: center; }
+    .gs-nav-links a {
+      text-decoration: none; color: #202124; font-size: 0.9rem; padding: 0 16px;
+      height: 64px; display: flex; align-items: center;
+      border-bottom: 3px solid transparent; transition: border-color 0.15s;
+    }
+    .gs-nav-links a:hover, .gs-nav-links a.active { border-bottom-color: #1a73e8; color: #1a73e8; }
+    .btn-back {
+      margin-left: auto; display: flex; align-items: center; gap: 6px;
+      text-decoration: none; color: #5f6368; font-size: 0.88rem; padding: 7px 14px;
+      border: 1px solid #e0e0e0; border-radius: 20px; transition: background 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .btn-back:hover { background: #f1f3f4; color: #202124; }
+    @media (min-width: 769px) {
+      .gs-nav { height: 88px; }
+      .gs-nav-logo .logo-img { height: 44px; width: 44px; }
+      .logo-name { font-size: 0.88rem; font-weight: 700; }
+      .gs-nav-links a { font-size: 1.05rem; font-weight: 700; height: 88px; }
+      .btn-back { font-size: 1rem; font-weight: 700; padding: 10px 18px; }
+    }
+
+    /* ── PAGE LAYOUT ── */
+    .gs-page { max-width: 640px; margin: 0 auto; padding: 24px 20px 60px; }
+
+    /* ── HEADER ── */
+    .reader-title { font-size: 1.3rem; font-weight: 800; color: #202124; text-align: center; margin-bottom: 4px; }
+    .reader-subtitle { font-size: 0.88rem; color: #5f6368; text-align: center; margin-bottom: 24px; }
+    .reader-free-badge {
+      display: inline-block; font-size: 0.78rem; font-weight: 700; background: #34a853; color: #fff;
+      padding: 3px 12px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .reader-header { text-align: center; }
+
+    /* ── READER ── */
+    .reader-wrap { max-width: 420px; margin: 0 auto; }
+    .reader-page-label { text-align: center; font-size: 0.85rem; color: #5f6368; font-weight: 600; margin-bottom: 10px; }
+    .reader-stage { position: relative; }
+    .reader-image-wrap {
+      width: 100%; aspect-ratio: 1410 / 2250; background: #f1f3f4; border-radius: 14px;
+      overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.16);
+    }
+    .reader-image-wrap img {
+      width: 100%; height: 100%; object-fit: contain; display: block; background: #fff;
+      -webkit-user-select: none; user-select: none; -webkit-user-drag: none; pointer-events: none;
+    }
+    .reader-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%; border: none; background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.22); font-size: 1.3rem; font-weight: 700; color: #202124;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: transform 0.15s ease, opacity 0.15s ease; z-index: 5;
+    }
+    .reader-nav:hover { transform: translateY(-50%) scale(1.08); }
+    .reader-nav:disabled { opacity: 0.25; cursor: default; }
+    .reader-nav:disabled:hover { transform: translateY(-50%); }
+    .reader-nav-prev { left: 8px; }
+    .reader-nav-next { right: 8px; }
+
+    .reader-progress { height: 4px; background: #f1f3f4; border-radius: 99px; margin-top: 16px; overflow: hidden; }
+    .reader-progress-fill { height: 100%; background: linear-gradient(90deg, #1a73e8, #174ea6); border-radius: 99px; transition: width 0.25s ease; }
+    .reader-hint { text-align: center; font-size: 0.78rem; color: #9aa0a6; margin-top: 10px; }
+
+    /* ── DONATE CTA ── */
+    .btn-donate {
+      display: block; text-align: center; text-decoration: none;
+      background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+      color: #fff; font-weight: 800; font-size: 0.98rem; padding: 16px 20px;
+      border-radius: 14px; margin: 28px 0 0; box-shadow: 0 4px 14px rgba(14,165,233,0.35);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.25); transition: transform 0.15s ease;
+    }
+    .btn-donate:hover { transform: translateY(-2px); }
+
+    /* ── DESCRIPTION BOX ── */
+    .ebook-desc {
+      background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 14px;
+      padding: 24px 28px; margin: 28px 0 0;
+      font-size: 0.9rem; font-weight: 400; color: #3c4043;
+      line-height: 1.65; white-space: pre-wrap; text-align: left;
+    }
+
+    /* ── FOOTER ── */
+    .gs-footer { border-top: 1px solid #e0e0e0; text-align: center; padding: 18px 24px; font-size: 0.8rem; color: #5f6368; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+<nav class="gs-nav">
+  <div class="gs-nav-inner">
+    <a class="gs-nav-logo" href="index.html">
+      <img src="./ภาพ/โลโก้ช่อง.jpeg" alt="Logo" class="logo-img">
+      <span class="logo-name">Lukas.❤️‍🔥</span>
+    </a>
+    <div class="gs-nav-links">
+      <a href="ebook-yukondiaw.html" class="active">อยู่คนเดียวให้เป็น</a>
+    </div>
+    <a href="index.html" class="btn-back">← ย้อนกลับ</a>
+  </div>
+</nav>
+
+<div class="gs-page">
+
+  <div class="reader-header">
+    <span class="reader-free-badge">อ่านฟรี</span>
+    <h1 class="reader-title">อยู่คนเดียวให้เป็น</h1>
+    <p class="reader-subtitle">เปลี่ยนความเหงาให้กลายเป็นพื้นที่ที่เราได้กลับมารู้จักตัวเอง</p>
+  </div>
+
+  <div class="reader-wrap">
+    <p class="reader-page-label">หน้า <span id="page-current">1</span> / <span id="page-total">22</span></p>
+
+    <div class="reader-stage">
+      <button type="button" class="reader-nav reader-nav-prev" id="btn-prev" aria-label="หน้าก่อนหน้า">‹</button>
+      <div class="reader-image-wrap">
+        <img id="reader-img" src="./ภาพ/อยู่คนเดียวให้เป็น-pages/page-01.jpg" alt="หน้า 1 ของ Ebook อยู่คนเดียวให้เป็น">
+      </div>
+      <button type="button" class="reader-nav reader-nav-next" id="btn-next" aria-label="หน้าถัดไป">›</button>
+    </div>
+
+    <div class="reader-progress"><div class="reader-progress-fill" id="reader-progress-fill"></div></div>
+    <p class="reader-hint">ใช้ปุ่มลูกศร ← → หรือปัดซ้าย-ขวาเพื่อเปลี่ยนหน้าได้เลยครับ</p>
+
+    <a href="donate.html" class="btn-donate">❤️‍🔥 โดเนทสนับสนุนช่อง</a>
+
+    <p class="ebook-desc">   ผมเคยเป็นคนที่กลัวความเงียบมากๆ เวลาต้องอยู่คนเดียวจะรู้สึกอึดอัด เหมือนต้องรีบหาอะไรมาเติมเต็มเวลาว่างตลอด ไม่ว่าจะเปิดเพลง เล่นมือถือ หรือทักหาใครสักคน เพราะกลัวว่าถ้าปล่อยให้เงียบจริงๆ ความรู้สึกแย่ๆ ที่เก็บไว้จะโผล่ขึ้นมา
+
+    จนวันหนึ่งผมเริ่มเข้าใจว่า "การอยู่คนเดียว" กับ "ความเหงา" มันคนละเรื่องกัน การอยู่คนเดียวให้เป็น ไม่ใช่การตัดขาดจากทุกคนรอบตัว แต่คือการกลับมาอยู่กับตัวเองได้ โดยไม่ต้องรู้สึกว่างเปล่า หรือต้องพึ่งพาใครตลอดเวลาเพื่อให้รู้สึกโอเค
+
+    Ebook เล่มนี้ผมเลยตั้งใจเขียนขึ้นมาเพื่อแบ่งปันสิ่งที่ผมค่อยๆ เรียนรู้มา ไม่ได้มาสอนว่าต้อง "เก่งเรื่องอยู่คนเดียว" แบบไหนถึงจะถูก แต่อยากชวนมึงมานั่งอยู่กับความเงียบไปด้วยกันสักพัก อ่านไปทีละหน้า แล้วค่อยๆ รู้สึกว่า จริงๆ แล้วการอยู่คนเดียว มันก็โอเคนะ
+
+    หวังว่า Ebook เล่มนี้จะเป็นเพื่อนในวันที่มึงต้องอยู่คนเดียว และทำให้รู้สึกว่าอยู่คนเดียวก็ไม่ได้น่ากลัวอย่างที่เคยคิดไว้ครับ
+
+    แล้วเจอกันใน Ebook นะครับ.🤍</p>
+  </div>
+
+</div>
+
+<footer class="gs-footer">Lukas.❤️‍🔥</footer>
+
+<script src="settings.js"></script>
+<script>
+(function () {
+  var TOTAL_PAGES = 22;
+  var PAGE_PATH = './ภาพ/อยู่คนเดียวให้เป็น-pages/page-';
+  var current = 1;
+
+  var img          = document.getElementById('reader-img');
+  var labelCurrent  = document.getElementById('page-current');
+  var progressFill  = document.getElementById('reader-progress-fill');
+  var btnPrev       = document.getElementById('btn-prev');
+  var btnNext       = document.getElementById('btn-next');
+
+  function pagePath(n) {
+    return PAGE_PATH + String(n).padStart(2, '0') + '.jpg';
+  }
+
+  function preload(n) {
+    if (n < 1 || n > TOTAL_PAGES) return;
+    var pre = new Image();
+    pre.src = pagePath(n);
+  }
+
+  function render() {
+    img.src = pagePath(current);
+    img.alt = 'หน้า ' + current + ' ของ Ebook อยู่คนเดียวให้เป็น';
+    labelCurrent.textContent = current;
+    progressFill.style.width = (current / TOTAL_PAGES * 100) + '%';
+    btnPrev.disabled = (current === 1);
+    btnNext.disabled = (current === TOTAL_PAGES);
+    preload(current + 1);
+    preload(current - 1);
+  }
+
+  function goTo(n) {
+    if (n < 1 || n > TOTAL_PAGES) return;
+    current = n;
+    render();
+  }
+
+  btnPrev.addEventListener('click', function () { goTo(current - 1); });
+  btnNext.addEventListener('click', function () { goTo(current + 1); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
+
+  /* ปัดนิ้วซ้าย-ขวาเพื่อเปลี่ยนหน้า */
+  var stage = document.querySelector('.reader-stage');
+  var touchStartX = 0, touchStartY = 0;
+  stage.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
+  }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    var SWIPE_THRESHOLD = 40;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+      if (dx < 0) goTo(current + 1); // ปัดซ้าย = หน้าถัดไป
+      else goTo(current - 1);        // ปัดขวา = หน้าก่อนหน้า
+    }
+  }, { passive: true });
+
+  render();
+}());
+</script>
+</body>
+</html>
